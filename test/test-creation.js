@@ -1,0 +1,46 @@
+/*global describe, beforeEach, it*/
+'use strict';
+
+var path = require('path'),
+  helpers = require('yeoman-generator').test;
+
+describe('bespokeplugin generator', function () {
+  beforeEach(function (done) {
+    helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
+      if (err) {
+        return done(err);
+      }
+
+      this.app = helpers.createGenerator('bespokeplugin:app', [
+        '../../app'
+      ]);
+
+      done();
+    }.bind(this));
+  });
+
+  it('creates expected files', function (done) {
+    var expected = [
+      '.editorconfig',
+      '.gitignore',
+      '.jshintrc',
+      '.travis.yml',
+      'bower.json',
+      'Gruntfile.js',
+      'LICENSE',
+      'package.json',
+      'README.md',
+      'src/bespoke-foobar.js'
+    ];
+
+    helpers.mockPrompt(this.app, {
+      'pluginName': 'foobar',
+      'githubUser': ''
+    });
+    this.app.options['skip-install'] = true;
+    this.app.run({}, function () {
+      helpers.assertFiles(expected);
+      done();
+    });
+  });
+});
