@@ -22,6 +22,7 @@ describe('bespokeplugin generator', function () {
   it('creates expected files', function (done) {
     var expected = [
       '.editorconfig',
+      '.gitattributes',
       '.gitignore',
       '.jshintrc',
       '.travis.yml',

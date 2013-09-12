@@ -111,6 +111,7 @@ BespokepluginGenerator.prototype.setupProjectFiles = function setupProjectFiles(
   this.template('README.md', 'README.md');
 
   this.copy('editorconfig', '.editorconfig');
+  this.copy('gitattributes', '.gitattributes');
   this.copy('gitignore', '.gitignore');
   this.copy('jshintrc', '.jshintrc');
   this.copy('travis.yml', '.travis.yml');
