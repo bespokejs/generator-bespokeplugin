@@ -35,6 +35,7 @@ describe('bespokeplugin generator', function () {
 
     helpers.mockPrompt(this.app, {
       'pluginName': 'foobar',
+      'pluginDescription': 'Foo bar baz',
       'githubUser': ''
     });
     this.app.options['skip-install'] = true;
