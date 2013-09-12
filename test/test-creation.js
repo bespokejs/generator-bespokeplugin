@@ -31,7 +31,8 @@ describe('bespokeplugin generator', function () {
       'LICENSE',
       'package.json',
       'README.md',
-      'src/bespoke-foobar.js'
+      'src/bespoke-foobar.js',
+      'spec/bespoke-foobarSpec.js'
     ];
 
     helpers.mockPrompt(this.app, {

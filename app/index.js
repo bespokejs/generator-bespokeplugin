@@ -99,6 +99,9 @@ BespokepluginGenerator.prototype.app = function app() {
   this.mkdir('src');
   this.template('src/name.js', 'src/' + this.pluginFullName + '.js');
 
+  this.mkdir('spec');
+  this.template('spec/nameSpec.js', 'spec/' + this.pluginFullName + 'Spec.js');
+
   this.mkdir('demo');
   this.template('demo/index.html', 'demo/index.html');
   this.template('demo/demo.js', 'demo/demo.js');
@@ -137,7 +140,8 @@ BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() 
     },
     'dependencies': {},
     'devDependencies': {
-      'grunt': '~0.4.1'
+      'grunt': '~0.4.1',
+      'grunt-contrib-jasmine': '~0.5.2'
     },
     'engines': {
       'node': '>=0.8.0'
@@ -162,9 +166,6 @@ BespokepluginGenerator.prototype.setupBowerJson = function setupBowerJson() {
     'version': '0.0.1',
     'dependencies': {
       'bespoke.js': '>=0.3.0'
-    },
-    'devDependencies': {
-      'es5-shim': '~2.1.0'
     }
   };
   this.write('bower.json', JSON.stringify(bowerJson, null, 2));

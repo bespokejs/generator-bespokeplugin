@@ -3,9 +3,20 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-
+    jasmine: {
+      src: [
+        'bower_components/bespoke.js/dist/bespoke.js',
+        'src/**/*.js'
+      ],
+      options: {
+        specs: 'spec/*Spec.js',
+        helpers: 'spec/*Helper.js'
+      }
+    }
   });
 
-  grunt.registerTask('default', []);
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
+
+  grunt.registerTask('default', ['jasmine']);
 
 };
