@@ -6,38 +6,38 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     meta: {
       banner: '/*!\n' +
-        ' * <%= pkg.title || pkg.name %> v<%= pkg.version %>\n' +
-        '<% if (pkg.homepage) { %> * <%= pkg.homepage %>\n<% } %>' +
+        ' * <%%= pkg.title || pkg.name %> v<%%= pkg.version %>\n' +
+        '<% if (pkg.homepage) { %> * <%%= pkg.homepage %>\n<% } %>' +
         ' *\n' +
-        ' * Copyright <%= grunt.template.today("yyyy") %>, <%= pkg.author.name %>\n' +
+        ' * Copyright <%%= grunt.template.today("yyyy") %>, <%%= pkg.author.name %>\n' +
         ' * This content is released under the' +
-        ' <%= _.pluck(pkg.licenses, "type").join(", ") %> license<%= pkg.licenses.length === 1 ? "" : "s" %>\n' +
-        '<% if (_.pluck(pkg.licenses, "url").join(", ")) { %> * <%= _.pluck(pkg.licenses, "url").join(", ") %>\n<% } %>' +
+        ' <%%= _.pluck(pkg.licenses, "type").join(", ") %> license<%%= pkg.licenses.length === 1 ? "" : "s" %>\n' +
+        '<% if (_.pluck(pkg.licenses, "url").join(", ")) { %> * <%%= _.pluck(pkg.licenses, "url").join(", ") %>\n<% } %>' +
         ' */\n\n',
-      microbanner: '/*! <%= pkg.title || pkg.name %> v<%= pkg.version %> ' +
-        '© <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>, ' +
-        'Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n'
+      microbanner: '/*! <%%= pkg.title || pkg.name %> v<%%= pkg.version %> ' +
+        '© <%%= grunt.template.today("yyyy") %> <%%= pkg.author.name %>, ' +
+        'Licensed <%%= _.pluck(pkg.licenses, "type").join(", ") %> */\n'
     },
     clean: {
       files: ['dist']
     },
     concat: {
       options: {
-        banner: '<%= meta.banner %>',
+        banner: '<%%= meta.banner %>',
         stripBanners: true
       },
       dist: {
-        src: ['src/<%= pkg.name %>.js'],
-        dest: 'dist/<%= pkg.name %>.js'
+        src: ['src/<%%= pkg.name %>.js'],
+        dest: 'dist/<%%= pkg.name %>.js'
       }
     },
     uglify: {
       options: {
-        banner: '<%= meta.microbanner %>'
+        banner: '<%%= meta.microbanner %>'
       },
       dist: {
-        src: ['<%= concat.dist.dest %>'],
-        dest: 'dist/<%= pkg.name %>.min.js'
+        src: ['<%%= concat.dist.dest %>'],
+        dest: 'dist/<%%= pkg.name %>.min.js'
       }
     },
     jasmine: {
