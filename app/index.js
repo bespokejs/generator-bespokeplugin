@@ -141,7 +141,10 @@ BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() 
     'dependencies': {},
     'devDependencies': {
       'grunt': '~0.4.1',
-      'grunt-contrib-jasmine': '~0.5.2'
+      'grunt-contrib-jasmine': '~0.5.2',
+      'grunt-contrib-concat': '~0.3.0',
+      'grunt-contrib-uglify': '~0.2.4',
+      'grunt-contrib-clean': '~0.5.0'
     },
     'engines': {
       'node': '>=0.8.0'
