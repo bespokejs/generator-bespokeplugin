@@ -49,6 +49,10 @@ module.exports = function(grunt) {
         specs: 'spec/*Spec.js',
         helpers: 'spec/*Helper.js'
       }
+    },
+    watch: {
+      files: ['src/**/*.js', 'spec/**/*.js', 'demo/**/*.js'],
+      tasks: ['default']
     }
   });
 
@@ -56,6 +60,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['clean', 'jasmine', 'concat', 'uglify']);
 
