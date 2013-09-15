@@ -3,7 +3,30 @@
 
   describe("<%= pluginFullName %>", function() {
 
-    var parent, slides, deck;
+    var parent, slides, deck,
+
+      createDeck = function() {
+        var PARENT_TAG = 'article',
+          SLIDE_TAG = 'section';
+
+        slides = [];
+
+        parent = document.createElement(PARENT_TAG);
+        for (var i = 0; i < 10; i++) {
+          slides.push(document.createElement(SLIDE_TAG));
+          parent.appendChild(slides[i]);
+        }
+
+        document.body.appendChild(parent);
+
+        deck = bespoke.from(PARENT_TAG, {
+          myplugin: true
+        });
+      },
+
+      destroyDeck = function() {
+        document.body.removeChild(parent);
+      };
 
     beforeEach(createDeck);
     afterEach(destroyDeck);
@@ -19,29 +42,6 @@
       });
 
     });
-
-    function createDeck() {
-      var PARENT_TAG = 'article',
-        SLIDE_TAG = 'section';
-
-      slides = [];
-
-      parent = document.createElement(PARENT_TAG);
-      for (var i = 0; i < 10; i++) {
-        slides.push(document.createElement(SLIDE_TAG));
-        parent.appendChild(slides[i]);
-      }
-
-      document.body.appendChild(parent);
-
-      deck = bespoke.from(PARENT_TAG, {
-        <%= pluginName %>: true
-      });
-    }
-
-    function destroyDeck() {
-      document.body.removeChild(parent);
-    }
 
   });
 
