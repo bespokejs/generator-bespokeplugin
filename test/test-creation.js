@@ -27,6 +27,7 @@ describe('bespokeplugin generator', function () {
       '.jshintrc',
       '.travis.yml',
       'bower.json',
+      'CONTRIBUTING.md',
       'Gruntfile.js',
       'LICENSE',
       'package.json',

@@ -110,6 +110,8 @@ BespokepluginGenerator.prototype.app = function app() {
 
 BespokepluginGenerator.prototype.setupProjectFiles = function setupProjectFiles() {
   this.template('Gruntfile.js', 'Gruntfile.js');
+
+  this.template('CONTRIBUTING.md', 'CONTRIBUTING.md');
   this.template('LICENSE', 'LICENSE');
   this.template('README.md', 'README.md');
 
