@@ -10,7 +10,7 @@ This is a work in progress.
 
 All source files for the plugin reside in the `src` directory.
 
-Jasmine tests reside in the `spec` directory.
+[Jasmine](http://pivotal.github.io/jasmine/) specs reside in the `spec` directory.
 
 Distributable versions of your plugin are generated in the `dist` directory by the following [Grunt](http://gruntjs.com/) tasks:
 
