@@ -61,6 +61,13 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc'
       }
     },
+    micro: {
+      src: '<%%= uglify.dist.dest %>',
+      options: {
+        limit: 1024,
+        gzip: true
+      }
+    },
     watch: {
       files: '<%%= jshint.src %>',
       tasks: ['default']
@@ -73,7 +80,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-micro');
 
-  grunt.registerTask('default', ['clean', 'jasmine', 'concat', 'uglify']);
+  grunt.registerTask('default', ['clean', 'jasmine', 'concat', 'uglify', 'micro']);
 
 };

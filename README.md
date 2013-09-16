@@ -28,6 +28,8 @@ Lint and test your plugin whenever source files change:
 $ grunt watch
 ```
 
+By default, your plugin is validated with [grunt-micro](https://github.com/markdalgleish/grunt-micro) to ensure it is less than 1KB.
+
 ### Publish to Bower
 
 Publish initial version to [Bower](http://bower.io/):
