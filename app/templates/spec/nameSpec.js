@@ -3,33 +3,23 @@
 
   describe("<%= pluginFullName %>", function() {
 
-    var parent, slides, deck,
+    var slides, deck,
 
       createDeck = function() {
-        var PARENT_TAG = 'article',
-          SLIDE_TAG = 'section';
-
         slides = [];
 
-        parent = document.createElement(PARENT_TAG);
+        var parent = document.createElement('article');
         for (var i = 0; i < 10; i++) {
-          slides.push(document.createElement(SLIDE_TAG));
+          slides.push(document.createElement('section'));
           parent.appendChild(slides[i]);
         }
 
-        document.body.appendChild(parent);
-
-        deck = bespoke.from(PARENT_TAG, {
+        deck = bespoke.from(parent, {
           myplugin: true
         });
-      },
-
-      destroyDeck = function() {
-        document.body.removeChild(parent);
       };
 
     beforeEach(createDeck);
-    afterEach(destroyDeck);
 
     describe("when a slide is activated", function() {
 
