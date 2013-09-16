@@ -1,9 +1,8 @@
-# <%= pluginFullName %>
 [![Build Status](https://secure.travis-ci.org/<%= githubUser %>/<%= pluginFullName %>.png?branch=master)](https://travis-ci.org/<%= githubUser %>/<%= pluginFullName %>)
 
-<%= pluginDescription.replace(/Bespoke\.js/g, '[Bespoke.js](http://markdalgleish.com/projects/bespoke.js)') %>
+# <%= pluginFullName %>
 
-> This plugin was built with [generator-bespokeplugin](https://github.com/markdalgleish/generator-bespokeplugin)
+<%= pluginDescription.replace(/Bespoke\.js/g, '[Bespoke.js](http://markdalgleish.com/projects/bespoke.js)') %>
 
 ## Download
 
@@ -16,7 +15,7 @@ Download the [production version][min] or the [development version][max], or use
 
 First, include both `bespoke.js` and `<%= pluginFullName %>.js` in your page.
 
-Then, simply include the plugin when initializing your presentation.
+Then, simply include the plugin when instantiating your presentation.
 
 ```js
 bespoke.horizontal.from('article', {
@@ -44,6 +43,10 @@ The <%= pluginFullName %> npm package is designed for use with [browserify](http
 require('bespoke');
 require('<%= pluginFullName %>');
 ```
+
+## Credits
+
+This plugin was built with [generator-bespokeplugin](https://github.com/markdalgleish/generator-bespokeplugin).
 
 ## License
 
