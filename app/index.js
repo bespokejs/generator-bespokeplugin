@@ -71,6 +71,7 @@ BespokepluginGenerator.prototype.askFor = function askFor() {
   this.prompt(prompts, function (props) {
     this.githubUser = props.githubUser;
     this.pluginName = this._.slugify(props.pluginName).replace(/^bespoke-/, '').toLowerCase();
+    this.pluginNameCamelized = this._.camelize(this.pluginName);
     this.pluginFullName = 'bespoke-' + this.pluginName;
     this.pluginDescription = props.pluginDescription;
 

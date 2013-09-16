@@ -15,7 +15,7 @@
         }
 
         deck = bespoke.from(parent, {
-          myplugin: true
+          <%= pluginNameCamelized %>: true
         });
       };
 

@@ -1,6 +1,6 @@
 (function(bespoke) {
 
-  bespoke.plugins.<%= pluginName %> = function(deck) {
+  bespoke.plugins.<%= pluginNameCamelized %> = function(deck) {
 
     /*
       Interact with the deck
