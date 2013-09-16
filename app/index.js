@@ -140,7 +140,9 @@ BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() 
     'scripts': {
       'test': 'grunt'
     },
-    'dependencies': {},
+    'peerDependencies': {
+      'bespoke': '>=0.3.0'
+    },
     'devDependencies': {
       'grunt': '~0.4.1',
       'grunt-contrib-jshint': '~0.6.4',
