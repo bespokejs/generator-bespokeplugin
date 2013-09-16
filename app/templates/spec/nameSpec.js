@@ -21,13 +21,13 @@
 
     beforeEach(createDeck);
 
-    describe("when a slide is activated", function() {
+    describe("deck.slide", function() {
 
       beforeEach(function() {
         deck.slide(0);
       });
 
-      it("should not a useless 'foobar' class to the slide", function() {
+      it("should not add a useless 'foobar' class to the slide", function() {
         expect(slides[0].classList.contains('foobar')).toBe(false);
       });
 
