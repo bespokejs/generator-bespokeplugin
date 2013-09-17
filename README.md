@@ -4,7 +4,7 @@
 
 A generator for [Yeoman](http://yeoman.io) that scaffolds a [Bespoke.js](http://markdalgleish.com/projects/bespoke.js) plugin.
 
-The boilerplate plugin includes a [Grunt](http://gruntjs.com) build system with [JSHint](http://www.jshint.com/), [Jasmine](http://pivotal.github.io/jasmine/), [UglifyJS](http://lisperator.net/uglifyjs/) preconfigured.
+The boilerplate plugin includes a [Grunt](http://gruntjs.com) build system with [JSHint](http://www.jshint.com/), [Jasmine](http://pivotal.github.io/jasmine/) and [UglifyJS](http://lisperator.net/uglifyjs/) preconfigured.
 
 ## Usage
 
