@@ -4,7 +4,24 @@
 
 A generator for [Yeoman](http://yeoman.io) that scaffolds a [Bespoke.js](http://markdalgleish.com/projects/bespoke.js) plugin.
 
-This is a work in progress.
+The boilerplate plugin includes a [Grunt](http://gruntjs.com) build system with [JSHint](http://www.jshint.com/), [Jasmine](http://pivotal.github.io/jasmine/), [UglifyJS](http://lisperator.net/uglifyjs/) preconfigured.
+
+## Usage
+
+Install Yeoman and `generator-bespokeplugin`:
+```bash
+$ npm install -g yo generator-bespokeplugin
+```
+
+Make a new directory and `cd` into it:
+```bash
+$ mkdir bespoke-myplugin && cd $_
+```
+
+Scaffold a new presentation:
+```bash
+$ yo bespokeplugin
+```
 
 ## Plugin workflow
 
