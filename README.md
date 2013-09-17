@@ -18,7 +18,7 @@ Make a new directory and `cd` into it:
 $ mkdir bespoke-myplugin && cd $_
 ```
 
-Scaffold a new presentation:
+Scaffold a new plugin:
 ```bash
 $ yo bespokeplugin
 ```
