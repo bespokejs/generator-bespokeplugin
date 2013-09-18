@@ -1,3 +1,3 @@
 bespoke.horizontal.from('article', {
-    <%= pluginNameCamelized %>: true
+  <%= pluginNameCamelized %>: true
 });
