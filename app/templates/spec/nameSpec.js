@@ -6,8 +6,6 @@
     var deck,
 
       createDeck = function() {
-        slides = [];
-
         var parent = document.createElement('article');
         for (var i = 0; i < 10; i++) {
           parent.appendChild(document.createElement('section'));
