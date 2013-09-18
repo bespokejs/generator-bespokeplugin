@@ -47,12 +47,12 @@ $ grunt watch
 
 By default, your plugin is validated with [grunt-micro](https://github.com/markdalgleish/grunt-micro) to ensure it is less than 1KB.
 
-### Publish to Bower
+### Register with Bower
 
-Publish initial version to [Bower](http://bower.io/):
+Register plugin with [Bower](http://bower.io/):
 
 ```bash
-$ bower publish
+$ bower register <my-plugin-name> <git-endpoint>
 ```
 
 Bower uses [Git tags](http://git-scm.com/book/en/Git-Basics-Tagging) for versioning.
