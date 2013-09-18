@@ -162,6 +162,9 @@ BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() 
       {
         'type': 'MIT'
       }
+    ],
+    'keywords': [
+      'bespoke.js-plugin'
     ]
   };
 
