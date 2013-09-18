@@ -127,6 +127,7 @@ BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() 
   var packageJson = {
     'name': this.pluginFullName,
     'version': '0.0.0',
+    'description': this.pluginDescription,
     'homepage': this.githubUrl + '/' + this.pluginFullName,
     'bugs': this.githubUrl + '/' + this.pluginFullName + '/issues',
     'author': {
