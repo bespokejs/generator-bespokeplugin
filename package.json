@@ -38,5 +38,8 @@
     {
       "type": "MIT"
     }
+  ],
+  "keywords": [
+    "bespoke.js-plugin"
   ]
 }
