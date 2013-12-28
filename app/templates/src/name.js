@@ -9,8 +9,8 @@ bespoke.plugins.<%= pluginNameCamelized %> = function(deck) {
   deck.slide(0);
 
   /*
-     Slide events
-     https://github.com/markdalgleish/bespoke.js#events
+    Slide events
+    https://github.com/markdalgleish/bespoke.js#events
   */
   deck.on('activate', function(e) {
     console.log('Slide #' + e.index + ' was activated!', e.slide);
