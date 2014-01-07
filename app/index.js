@@ -155,7 +155,9 @@ BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() 
       'grunt-contrib-clean': '~0.5.0',
       'grunt-contrib-watch': '~0.5.3',
       'grunt-micro': '~0.1.0',
-      'bespoke': '>=0.3.0'
+      'bespoke': '~0.4.0',
+      'bespoke-keys': '~0.1.0',
+      'bespoke-touch': '~0.1.0'
     },
     'engines': {
       'node': '>=0.8.0'
