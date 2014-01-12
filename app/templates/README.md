@@ -18,7 +18,7 @@ First, include both `bespoke.js` and `<%= pluginFullName %>.js` in your page.
 Then, simply include the plugin when instantiating your presentation.
 
 ```js
-bespoke.horizontal.from('article', {
+bespoke.from('article', {
   <%= pluginNameCamelized %>: true
 });
 ```
