@@ -55,9 +55,9 @@ gulp.task('coveralls', ['test'], function() {
 });
 
 gulp.task('compile', ['clean'], function() {
-  return browserify('./lib/bespoke-<%= pluginName %>.js')
+  return browserify('./lib/<%= pluginFullName %>.js')
     .bundle({ standalone: 'bespoke.plugins.<%= pluginName %>' })
-    .pipe(source('bespoke-<%= pluginName %>.js'))
+    .pipe(source('<%= pluginFullName %>.js'))
     .pipe(buffer())
     .pipe(header(template([
       '/*!',
@@ -69,7 +69,7 @@ gulp.task('compile', ['clean'], function() {
       ' */\n\n'
     ].join('\n'), pkg)))
     .pipe(gulp.dest('dist'))
-    .pipe(rename('bespoke-' + pkg.name + '.min.js'))
+    .pipe(rename('<%= pluginFullName %>.min.js'))
     .pipe(uglify())
     .pipe(header(template([
       '/*! <%%= name %> v<%%= version %> ',
