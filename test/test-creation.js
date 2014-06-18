@@ -28,12 +28,12 @@ describe('bespokeplugin generator', function () {
       '.travis.yml',
       'bower.json',
       'CONTRIBUTING.md',
-      'Gruntfile.js',
+      'gulpfile.js',
       'LICENSE',
       'package.json',
       'README.md',
-      'src/bespoke-foobar.js',
-      'spec/bespoke-foobarSpec.js'
+      'lib/bespoke-foobar.js',
+      'test/spec/bespoke-foobarSpec.js'
     ];
 
     helpers.mockPrompt(this.app, {

@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/<%= githubUser %>/<%= pluginFullName %>.png?branch=master)](https://travis-ci.org/<%= githubUser %>/<%= pluginFullName %>)
+[![Build Status](https://secure.travis-ci.org/<%= githubUser %>/<%= pluginFullName %>.png?branch=master)](https://travis-ci.org/<%= githubUser %>/<%= pluginFullName %>) [![Coverage Status](https://coveralls.io/repos/<%= githubUser %>/<%= pluginFullName %>/badge.png)](https://coveralls.io/r/<%= githubUser %>/<%= pluginFullName %>)
 
 # <%= pluginFullName %>
 
@@ -13,23 +13,28 @@ Download the [production version][min] or the [development version][max], or use
 
 ## Usage
 
-First, include both `bespoke.js` and `<%= pluginFullName %>.js` in your page.
+This plugin is shipped in a [UMD format](https://github.com/umdjs/umd), meaning that it is available as a CommonJS/AMD module or browser global.
 
-Then, simply include the plugin when instantiating your presentation.
+For example, when using CommonJS modules:
 
 ```js
-bespoke.from('article', {
-  <%= pluginNameCamelized %>: true
-});
+var bespoke = require('bespoke'),
+  <%= pluginNameCamelized %> = require('bespoke-<%= pluginNameCamelized %>');
+
+bespoke.from('#presentation', [
+  <%= pluginNameCamelized %>()
+]);
+```
+
+When using browser globals:
+
+```js
+bespoke.from('#presentation', [
+  bespoke.plugins.<%= pluginNameCamelized %>()
+]);
 ```
 
 ## Package managers
-
-### Bower
-
-```bash
-$ bower install <%= pluginFullName %>
-```
 
 ### npm
 
@@ -37,11 +42,10 @@ $ bower install <%= pluginFullName %>
 $ npm install <%= pluginFullName %>
 ```
 
-The <%= pluginFullName %> npm package is designed for use with [browserify](http://browserify.org/), e.g.
+### Bower
 
-```js
-require('bespoke');
-require('<%= pluginFullName %>');
+```bash
+$ bower install <%= pluginFullName %>
 ```
 
 ## Credits

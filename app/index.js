@@ -97,11 +97,12 @@ BespokepluginGenerator.prototype.userInfo = function userInfo() {
 };
 
 BespokepluginGenerator.prototype.app = function app() {
-  this.mkdir('src');
-  this.template('src/name.js', 'src/' + this.pluginFullName + '.js');
+  this.mkdir('lib');
+  this.template('lib/name.js', 'lib/' + this.pluginFullName + '.js');
 
-  this.mkdir('spec');
-  this.template('spec/nameSpec.js', 'spec/' + this.pluginFullName + 'Spec.js');
+  this.mkdir('test');
+  this.mkdir('test/spec');
+  this.template('test/spec/nameSpec.js', 'test/spec/' + this.pluginFullName + 'Spec.js');
 
   this.mkdir('demo');
   this.template('demo/index.html', 'demo/index.html');
@@ -110,17 +111,18 @@ BespokepluginGenerator.prototype.app = function app() {
 };
 
 BespokepluginGenerator.prototype.setupProjectFiles = function setupProjectFiles() {
-  this.template('Gruntfile.js', 'Gruntfile.js');
+  this.template('gulpfile.js', 'gulpfile.js');
 
   this.template('CONTRIBUTING.md', 'CONTRIBUTING.md');
   this.template('LICENSE', 'LICENSE');
   this.template('README.md', 'README.md');
 
-  this.copy('editorconfig', '.editorconfig');
-  this.copy('gitattributes', '.gitattributes');
-  this.copy('gitignore', '.gitignore');
-  this.copy('jshintrc', '.jshintrc');
-  this.copy('travis.yml', '.travis.yml');
+  this.copy('_editorconfig', '.editorconfig');
+  this.copy('_gitattributes', '.gitattributes');
+  this.copy('_gitignore', '.gitignore');
+  this.copy('_jshintrc', '.jshintrc');
+  this.copy('_travis.yml', '.travis.yml');
+  this.copy('karma.conf.js', 'karma.conf.js');
 };
 
 BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() {
@@ -134,33 +136,46 @@ BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() 
       'name': this.realName,
       'url': this.githubUrl
     },
-    'main': './dist/' + this.pluginFullName + '.js',
+    'main': './lib/' + this.pluginFullName + '.js',
     'repository': {
       'type': 'git',
       'url': 'git://github.com/' + this.githubUser + '/' + this.pluginFullName + '.git'
     },
     'scripts': {
-      'test': 'grunt'
+      'test': 'gulp',
+      'coveralls': 'gulp coveralls'
     },
     'peerDependencies': {
-      'bespoke': '>=0.3.0'
+      'bespoke': '^1.0.0'
     },
     'devDependencies': {
-      'grunt-cli': '~0.1.9',
-      'grunt': '~0.4.1',
-      'grunt-contrib-jshint': '~0.6.4',
-      'grunt-contrib-jasmine': '~0.5.2',
-      'grunt-contrib-concat': '~0.3.0',
-      'grunt-contrib-uglify': '~0.2.4',
-      'grunt-contrib-clean': '~0.5.0',
-      'grunt-contrib-watch': '~0.5.3',
-      'grunt-micro': '~0.1.0',
-      'bespoke': '~0.4.0',
-      'bespoke-keys': '~0.1.0',
-      'bespoke-touch': '~0.1.0'
+      'bespoke': '^1.0.0',
+      'bespoke-keys': '^1.0.0',
+      'bespoke-touch': '^1.0.0',
+      'browserify': '^4.1.5',
+      'function-bind': '^0.1.0',
+      'gulp': '^3.5.1',
+      'gulp-clean': '^0.2.4',
+      'gulp-coveralls': '^0.1.0',
+      'gulp-header': '^1.0.2',
+      'gulp-jshint': '^1.3.4',
+      'gulp-karma': '0.0.2',
+      'gulp-rename': '^1.2.0',
+      'gulp-uglify': '^0.3.0',
+      'istanbul': '^0.2.11',
+      'jshint-stylish': '^0.1.5',
+      'karma': '^0.10.9',
+      'karma-browserify': '^0.2.1',
+      'karma-coverage': '^0.1.5',
+      'karma-jasmine': '^0.1.5',
+      'karma-phantomjs-launcher': '^0.1.4',
+      'lodash': '^2.4.1',
+      'vinyl-buffer': '0.0.0',
+      'vinyl-map': '^1.0.1',
+      'vinyl-source-stream': '^0.1.1'
     },
     'engines': {
-      'node': '>=0.8.0'
+      'node': '>=0.10.0'
     },
     'licenses': [
       {
@@ -168,7 +183,7 @@ BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() 
       }
     ],
     'keywords': [
-      'bespoke.js-plugin'
+      'bespoke-plugin'
     ]
   };
 
@@ -183,8 +198,12 @@ BespokepluginGenerator.prototype.setupBowerJson = function setupBowerJson() {
   var bowerJson = {
     'name': this.pluginFullName,
     'version': '0.0.0',
+    "main": "./dist/" + this.pluginFullName + ".js",
+    "ignore": [
+      "**/.*"
+    ],
     'dependencies': {
-      'bespoke.js': '>=0.3.0'
+      'bespoke.js': '^1.0.0'
     }
   };
   this.write('bower.json', JSON.stringify(bowerJson, null, 2));

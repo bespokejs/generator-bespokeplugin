@@ -8,44 +8,51 @@ The boilerplate plugin includes a [Grunt](http://gruntjs.com) build system with 
 
 ## Usage
 
-Install Yeoman and `generator-bespokeplugin`:
+Assuming you have [Node.js](http://nodejs.org), install `generator-bespokeplugin`:
 ```bash
-$ npm install -g yo generator-bespokeplugin
+$ npm install -g generator-bespokeplugin
 ```
 
 Make a new directory and `cd` into it:
 ```bash
-$ mkdir bespoke-myplugin && cd $_
+$ mkdir my-presentation
+$ cd my-presentation
 ```
 
-Scaffold a new plugin:
+Scaffold a new presentation:
 ```bash
 $ yo bespokeplugin
 ```
 
 ## Plugin workflow
 
-All source files for the plugin reside in the `src` directory.
+All source files for the plugin reside in the `lib` directory.
 
-[Jasmine](http://pivotal.github.io/jasmine/) specs reside in the `spec` directory.
+[Jasmine](http://pivotal.github.io/jasmine/) specs reside in the `test/spec` directory.
 
-Distributable versions of your plugin are generated in the `dist` directory by the following [Grunt](http://gruntjs.com/) tasks:
+Distributable versions of your plugin are generated in the `dist` directory by the following [gulp](https://github.com/gulpjs/gulp) tasks:
 
 ### Grunt tasks
 
 Lint, test, concatenate and minify source files:
 
 ```bash
-$ grunt
+$ gulp
 ```
 
 Lint and test your plugin whenever source files change:
 
 ```bash
-$ grunt watch
+$ gulp dev
 ```
 
-By default, your plugin is validated with [grunt-micro](https://github.com/markdalgleish/grunt-micro) to ensure it is less than 1KB.
+### Publish to npm
+
+By default, your plugin is configured to work with [browserify](browserify.org).
+
+```bash
+$ npm publish
+```
 
 ### Register with Bower
 
@@ -64,14 +71,6 @@ $ git add .
 $ git commit -m "Bump to vX.X.X"
 $ git tag -a vX.X.X -m "vX.X.X"
 $ git push --tags origin master
-```
-
-### Publish to npm
-
-By default, your plugin is configured to work with [browserify](browserify.org).
-
-```bash
-$ npm publish
 ```
 
 ## License
