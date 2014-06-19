@@ -4,7 +4,7 @@
 
 A generator for [Yeoman](http://yeoman.io) that scaffolds a [Bespoke.js](http://markdalgleish.com/projects/bespoke.js) plugin.
 
-The boilerplate plugin includes a [Grunt](http://gruntjs.com) build system with [JSHint](http://www.jshint.com/), [Jasmine](http://pivotal.github.io/jasmine/) and [UglifyJS](http://lisperator.net/uglifyjs/) preconfigured.
+The boilerplate plugin includes a [Gulp](gulpjs.com) build system with [Browserify](http://browserify.org), [JSHint](http://www.jshint.com/), [Karma](karma-runner.github.io), [Istanbul](http://gotwarlost.github.io/istanbul), [Travis CI](https://travis-ci.org/) and [Coveralls](https://coveralls.io) preconfigured.
 
 ## Usage
 
@@ -15,8 +15,8 @@ $ npm install -g generator-bespokeplugin
 
 Make a new directory and `cd` into it:
 ```bash
-$ mkdir my-presentation
-$ cd my-presentation
+$ mkdir bespoke-myplugin
+$ cd bespoke-myplugin
 ```
 
 Scaffold a new presentation:
@@ -32,9 +32,9 @@ All source files for the plugin reside in the `lib` directory.
 
 Distributable versions of your plugin are generated in the `dist` directory by the following [gulp](https://github.com/gulpjs/gulp) tasks:
 
-### Grunt tasks
+### Gulp tasks
 
-Lint, test, concatenate and minify source files:
+Lint, test, and compile the project:
 
 ```bash
 $ gulp
@@ -47,8 +47,6 @@ $ gulp dev
 ```
 
 ### Publish to npm
-
-By default, your plugin is configured to work with [browserify](browserify.org).
 
 ```bash
 $ npm publish
