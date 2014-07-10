@@ -146,7 +146,7 @@ BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() 
       'coveralls': 'gulp coveralls'
     },
     'peerDependencies': {
-      'bespoke': '^1.0.0'
+      'bespoke': '>=1.0.0-beta'
     },
     'devDependencies': {
       'bespoke': '^1.0.0',
@@ -203,7 +203,7 @@ BespokepluginGenerator.prototype.setupBowerJson = function setupBowerJson() {
       "**/.*"
     ],
     'dependencies': {
-      'bespoke.js': '^1.0.0'
+      'bespoke.js': '>=1.0.0-beta'
     }
   };
   this.write('bower.json', JSON.stringify(bowerJson, null, 2));
