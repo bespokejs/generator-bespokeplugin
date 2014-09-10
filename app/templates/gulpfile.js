@@ -34,7 +34,7 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('instrument', function() {
+gulp.task('instrument', ['clean'], function() {
   return gulp.src('lib/**/*.js')
     .pipe(map(function(code, filename) {
       var instrumenter = new istanbul.Instrumenter(),
@@ -44,7 +44,7 @@ gulp.task('instrument', function() {
     .pipe(gulp.dest('lib-instrumented'));
 });
 
-gulp.task('test', ['clean', 'instrument'], function() {
+gulp.task('test', ['instrument'], function() {
   return gulp.src(['test/spec/*Spec.js'])
     .pipe(karma({ configFile: 'karma.conf.js' }));
 });
