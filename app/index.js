@@ -146,7 +146,7 @@ BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() 
       'coveralls': 'gulp coveralls'
     },
     'peerDependencies': {
-      'bespoke': '>=1.0.0-beta'
+      'bespoke': '>=1.0.0'
     },
     'devDependencies': {
       'bespoke': '^1.0.0',
