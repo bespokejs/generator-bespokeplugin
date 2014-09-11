@@ -128,7 +128,7 @@ BespokepluginGenerator.prototype.setupProjectFiles = function setupProjectFiles(
 BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() {
   var packageJson = {
     'name': this.pluginFullName,
-    'version': '0.0.0',
+    'version': '1.0.0',
     'description': this.pluginDescription,
     'homepage': this.githubUrl + '/' + this.pluginFullName,
     'bugs': this.githubUrl + '/' + this.pluginFullName + '/issues',
@@ -198,7 +198,7 @@ BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() 
 BespokepluginGenerator.prototype.setupBowerJson = function setupBowerJson() {
   var bowerJson = {
     'name': this.pluginFullName,
-    'version': '0.0.0',
+    'version': '1.0.0',
     "main": "./dist/" + this.pluginFullName + ".js",
     "ignore": [
       "**/.*"
