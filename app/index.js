@@ -150,6 +150,7 @@ BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() 
     },
     'devDependencies': {
       'bespoke': '^1.0.0',
+      'bespoke-classes': '^1.0.0',
       'bespoke-keys': '^1.0.0',
       'bespoke-touch': '^1.0.0',
       'browserify': '^4.1.5',
