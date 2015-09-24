@@ -64,8 +64,7 @@ gulp.task('compile', ['clean'], function() {
       ' * <%%= name %> v<%%= version %>',
       ' *',
       ' * Copyright <%%= new Date().getFullYear() %>, <%%= author.name %>',
-      ' * This content is released under the <%%= licenses[0].type %> license',
-      ' * <%%= licenses[0].url %>',
+      ' * This content is released under the <%%= license %> license',
       ' */\n\n'
     ].join('\n'), pkg)))
     .pipe(gulp.dest('dist'))
@@ -74,7 +73,7 @@ gulp.task('compile', ['clean'], function() {
     .pipe(header(template([
       '/*! <%%= name %> v<%%= version %> ',
       '© <%%= new Date().getFullYear() %> <%%= author.name %>, ',
-      '<%%= licenses[0].type %> License */\n'
+      '<%%= license %> License */\n'
     ].join(''), pkg)))
     .pipe(gulp.dest('dist'));
 });

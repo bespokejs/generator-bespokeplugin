@@ -178,11 +178,7 @@ BespokepluginGenerator.prototype.setupPackageJson = function setupPackageJson() 
     'engines': {
       'node': '>=0.10.0'
     },
-    'licenses': [
-      {
-        'type': 'MIT'
-      }
-    ],
+    'licenses': 'MIT',
     'keywords': [
       'bespoke-plugin'
     ]
