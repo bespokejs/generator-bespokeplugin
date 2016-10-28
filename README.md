@@ -28,7 +28,7 @@ $ yo bespokeplugin
 
 All source files for the plugin reside in the `lib` directory.
 
-[Jasmine](http://pivotal.github.io/jasmine/) specs reside in the `test/spec` directory.
+[Jasmine](http://jasmine.github.io/) specs reside in the `test/spec` directory.
 
 Distributable versions of your plugin are generated in the `dist` directory by the following [gulp](https://github.com/gulpjs/gulp) tasks:
 
